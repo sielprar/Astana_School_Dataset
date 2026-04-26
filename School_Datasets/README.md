@@ -1,0 +1,14 @@
+**Скрэйпинг базы данных по школам города Астана**
+
+[astana_schools_with_bin_geocoded.csv](astana_schools_with_bin_geocoded.csv) - csv файл с колонками school_name, type_of_school, adress, BIN, date_of_start_(MM_YY), longitude, latitude. Содержит в себе данные о 193-ех школах города.
+
+[scrape_astana_schools.py](scrape_astana_schools.py) - код для сбора данных с адресами и названиями школ с сайта 2GIS.
+
+[clean_astana_schools.py](clean_astana_schools.py) - чистка csv файла и удаление школ из соседних сел.
+
+[enrich_schools_adata_bin.py](enrich_schools_adata_bin.py) - сбор данных с датой основания каждой школы основываясь на БИН (первые 4 цифры соответствуют году и месяцу регистрации школы в базе государства). Создаются столбцы с БИН и датой в формате ММ.ГГ.
+
+[geocode_astana_schools.py](geocode_astana_schools.py) - получение географических координат школ ссылаясь на их физический адрес в городе.
+
+P.S. В случае некоторых школ не удалось найти их БИН и дату регистрации, так как возможно в базе государства они зарегестрированы под другим именем.
+
